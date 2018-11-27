@@ -1,0 +1,16 @@
+function [] = parity_check(N, K)
+h = zeros(N-K, N);
+sqK = sqrt(K);
+sqN = sqrt(N);
+i = 1;
+for itr = 1:N
+    if itr <= sqk
+        h(itr:itr, si:si+sqN-1) = 1;
+        i = i + sqN;
+    else
+        k = 1;
+       for j = 1:sqN
+         h(itr:itr, k)  
+    end
+end
+        
