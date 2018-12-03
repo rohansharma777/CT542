@@ -57,4 +57,25 @@ disp(codeword);
 
 disp('The parity check matrix is: ');
 
-parity_check(N, K);
+h = parity_check(N, K);
+
+disp('To check if generated H is correct or not: ');
+disp('H*Codeword: ');
+
+disp(mod(h*codeword',2));
+
+disp('Sending through the channel ... ');
+
+perror = input('\nEnter the value of perror: ');
+
+code_with_noise = bec(codeword, perror);
+
+code_with_noise = code_with_noise + codeword;
+
+disp('Code after going through the channel: ');
+
+disp(code_with_noise);
+
+disp('\nDecoding Using Tanner Graph (Message Passing) ... ');
+
+dec_code = tanner(code_with_noise, N, K);
